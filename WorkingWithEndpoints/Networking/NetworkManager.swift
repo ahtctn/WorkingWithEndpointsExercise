@@ -14,6 +14,7 @@ typealias UserCompletion = (Result<UserArray, NetworkError>) -> Void
 typealias CommentsCompletion = (Result<CommentsArray, NetworkError>) -> Void
 typealias AlbumsCompletion = (Result<AlbumsArray, NetworkError>) -> Void
 typealias TodosCompletion = (Result<TodosArray, NetworkError>) -> Void
+typealias PostsCompletion = (Result<PostsModel, NetworkError>) -> Void
 
 
 class NetworkManager {
@@ -67,6 +68,11 @@ class NetworkManager {
     
     func getTodos(completion: @escaping TodosCompletion) {
         let endpoint = Endpoint.getTodos
+        request(endpoint, completion: completion)
+    }
+    
+    func posts(title: String, body: String, userId: Int, completion: @escaping PostsCompletion) {
+        let endpoint = Endpoint.posts(title: title, body: body, userId: userId)
         request(endpoint, completion: completion)
     }
 }

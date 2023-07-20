@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BBE16AA2A695EF700702F05 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE16A92A695EF700702F05 /* PostsModel.swift */; };
 		7BE790802A6828E200410415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7907F2A6828E200410415 /* AppDelegate.swift */; };
 		7BE790822A6828E200410415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790812A6828E200410415 /* SceneDelegate.swift */; };
 		7BE790842A6828E200410415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790832A6828E200410415 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BBE16A92A695EF700702F05 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		7BE7907C2A6828E200410415 /* WorkingWithEndpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkingWithEndpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE7907F2A6828E200410415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BE790812A6828E200410415 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BBE16A82A695EEB00702F05 /* PostsModel */ = {
+			isa = PBXGroup;
+			children = (
+				7BBE16A92A695EF700702F05 /* PostsModel.swift */,
+			);
+			path = PostsModel;
+			sourceTree = "<group>";
+		};
 		7BE790732A6828E200410415 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		7BE7909B2A68A39900410415 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BBE16A82A695EEB00702F05 /* PostsModel */,
 				7BE790AD2A68AEA100410415 /* TodosModels */,
 				7BE790A92A68ADEB00410415 /* AlbumsModels */,
 				7BE790A62A68AC5D00410415 /* CommentModels */,
@@ -237,6 +248,7 @@
 				7BE790AC2A68AE0500410415 /* AlbumsModel.swift in Sources */,
 				7BE7909D2A68A3A200410415 /* UserModel.swift in Sources */,
 				7BE790842A6828E200410415 /* ViewController.swift in Sources */,
+				7BBE16AA2A695EF700702F05 /* PostsModel.swift in Sources */,
 				7BE790802A6828E200410415 /* AppDelegate.swift in Sources */,
 				7BE7909F2A68A44700410415 /* AddressModel.swift in Sources */,
 				7BE790822A6828E200410415 /* SceneDelegate.swift in Sources */,

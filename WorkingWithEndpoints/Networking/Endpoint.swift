@@ -14,6 +14,7 @@ protocol EndpointProtocol {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: [String: String]? { get }
+    var parameters: [String: Any]? { get }
     
     func request() -> URLRequest
 }
@@ -23,6 +24,7 @@ enum Endpoint {
     case getComments(postID: String)
     case getAlbums
     case getTodos
+    case posts(title: String, body: String, userId: Int)
         
 }
 
@@ -41,6 +43,8 @@ extension Endpoint: EndpointProtocol {
             return Constants.path_albums
         case .getTodos:
             return Constants.path_todos
+        case .posts:
+            return Constants.parameters_posts
         }
     }
     
@@ -54,11 +58,26 @@ extension Endpoint: EndpointProtocol {
             return .get
         case .getTodos:
             return .get
+        case .posts:
+            return .post
         }
     }
     
     var headers: [String : String]? {
-        //let header: [String: String]? = ["Authorization" : "Bearer: \(token)"]
+        
+        if case .posts = self {
+            let header: [String: String]? = ["Content-type" : "application/json; charset=UTF-8"]
+            return header
+        }
+        
+        return nil
+    }
+    
+    var parameters: [String: Any]? {
+        if case .posts(let title, let body, let userId) = self {
+            return ["title": title, "body": body, "userId": userId]
+        }
+        
         return nil
     }
     
@@ -68,14 +87,23 @@ extension Endpoint: EndpointProtocol {
         }
         
         if case .getComments(let id) = self {
-            components.queryItems = [URLQueryItem(name: "postId", value: id)]
+            components.queryItems = [URLQueryItem(name: "posts", value: id)]
         }
         
         components.path = path
         
         var request = URLRequest(url: components.url!)
-        
         request.httpMethod = method.rawValue
+        
+        if let parameters {
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+                request.httpBody = data
+            } catch {
+                print("\(error.localizedDescription) JSONSerialization Error.")
+            }
+        }
+        
         
         if let header = headers {
             for (key, value) in header {

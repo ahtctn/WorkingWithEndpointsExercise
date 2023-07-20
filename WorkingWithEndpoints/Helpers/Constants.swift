@@ -17,5 +17,7 @@ enum Constants {
     
     static let path_todos = "/todos"
     
+    static let parameters_posts = "/posts"
+    
     
 }
