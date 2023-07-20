@@ -10,6 +10,12 @@ import Foundation
 typealias NetworkResult<T> = Result<T, NetworkError>
 typealias NetworkCompletion<T> = (NetworkResult<T>) -> Void
 
+typealias UserCompletion = (Result<UserArray, NetworkError>) -> Void
+typealias CommentsCompletion = (Result<CommentsArray, NetworkError>) -> Void
+typealias AlbumsCompletion = (Result<AlbumsArray, NetworkError>) -> Void
+typealias TodosCompletion = (Result<TodosArray, NetworkError>) -> Void
+
+
 class NetworkManager {
     
     static let shared = NetworkManager()
@@ -44,13 +50,23 @@ class NetworkManager {
         
     }
     
-    func getUser(completion: @escaping (Result<UserArray, NetworkError>) -> Void) {
+    func getUser(completion: @escaping UserCompletion) {
         let endpoint = Endpoint.getUsers
         request(endpoint, completion: completion)
     }
     
-    func getComments(completion: @escaping (Result<CommentsArray, NetworkError>) -> Void) {
-        let endpoint = Endpoint.getComments
+    func getComments(postId: String, completion: @escaping CommentsCompletion) {
+        let endpoint = Endpoint.getComments(postID: postId)
+        request(endpoint, completion: completion)
+    }
+    
+    func getAlbums(completion: @escaping AlbumsCompletion) {
+        let endpoint = Endpoint.getAlbums
+        request(endpoint, completion: completion)
+    }
+    
+    func getTodos(completion: @escaping TodosCompletion) {
+        let endpoint = Endpoint.getTodos
         request(endpoint, completion: completion)
     }
 }

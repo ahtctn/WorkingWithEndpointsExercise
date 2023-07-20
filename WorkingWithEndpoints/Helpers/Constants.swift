@@ -13,5 +13,9 @@ enum Constants {
     
     static let path_comments = "/comments"
     
+    static let path_albums = "/albums"
+    
+    static let path_todos = "/todos"
+    
     
 }

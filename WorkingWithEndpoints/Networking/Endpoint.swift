@@ -20,7 +20,9 @@ protocol EndpointProtocol {
 
 enum Endpoint {
     case getUsers
-    case getComments
+    case getComments(postID: String)
+    case getAlbums
+    case getTodos
         
 }
 
@@ -35,6 +37,10 @@ extension Endpoint: EndpointProtocol {
             return Constants.path_users
         case .getComments:
             return Constants.path_comments
+        case .getAlbums:
+            return Constants.path_albums
+        case .getTodos:
+            return Constants.path_todos
         }
     }
     
@@ -43,6 +49,10 @@ extension Endpoint: EndpointProtocol {
         case .getUsers:
             return .get
         case .getComments:
+            return .get
+        case .getAlbums:
+            return .get
+        case .getTodos:
             return .get
         }
     }
@@ -57,6 +67,10 @@ extension Endpoint: EndpointProtocol {
             fatalError("Component error")
         }
         
+        if case .getComments(let id) = self {
+            components.queryItems = [URLQueryItem(name: "postId", value: id)]
+        }
+        
         components.path = path
         
         var request = URLRequest(url: components.url!)
@@ -68,10 +82,7 @@ extension Endpoint: EndpointProtocol {
                 request.setValue(value, forHTTPHeaderField: key)
             }
         }
-        
         return request
-        
-        
     }
     
     

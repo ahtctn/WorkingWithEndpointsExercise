@@ -21,6 +21,8 @@
 		7BE790A12A68A45B00410415 /* GeoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790A02A68A45B00410415 /* GeoModel.swift */; };
 		7BE790A32A68A46700410415 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790A22A68A46700410415 /* CompanyModel.swift */; };
 		7BE790A82A68AC6B00410415 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790A72A68AC6B00410415 /* CommentsModel.swift */; };
+		7BE790AC2A68AE0500410415 /* AlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790AB2A68AE0500410415 /* AlbumsModel.swift */; };
+		7BE790AF2A68AEAD00410415 /* TodosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE790AE2A68AEAD00410415 /* TodosModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7BE790A02A68A45B00410415 /* GeoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoModel.swift; sourceTree = "<group>"; };
 		7BE790A22A68A46700410415 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		7BE790A72A68AC6B00410415 /* CommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
+		7BE790AB2A68AE0500410415 /* AlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsModel.swift; sourceTree = "<group>"; };
+		7BE790AE2A68AEAD00410415 /* TodosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		7BE7909B2A68A39900410415 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BE790AD2A68AEA100410415 /* TodosModels */,
+				7BE790A92A68ADEB00410415 /* AlbumsModels */,
 				7BE790A62A68AC5D00410415 /* CommentModels */,
 				7BE790A52A68AC4B00410415 /* UserModels */,
 			);
@@ -137,6 +143,22 @@
 				7BE790A72A68AC6B00410415 /* CommentsModel.swift */,
 			);
 			path = CommentModels;
+			sourceTree = "<group>";
+		};
+		7BE790A92A68ADEB00410415 /* AlbumsModels */ = {
+			isa = PBXGroup;
+			children = (
+				7BE790AB2A68AE0500410415 /* AlbumsModel.swift */,
+			);
+			path = AlbumsModels;
+			sourceTree = "<group>";
+		};
+		7BE790AD2A68AEA100410415 /* TodosModels */ = {
+			isa = PBXGroup;
+			children = (
+				7BE790AE2A68AEAD00410415 /* TodosModel.swift */,
+			);
+			path = TodosModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE790AF2A68AEAD00410415 /* TodosModel.swift in Sources */,
 				7BE790952A68290300410415 /* NetworkManager.swift in Sources */,
+				7BE790AC2A68AE0500410415 /* AlbumsModel.swift in Sources */,
 				7BE7909D2A68A3A200410415 /* UserModel.swift in Sources */,
 				7BE790842A6828E200410415 /* ViewController.swift in Sources */,
 				7BE790802A6828E200410415 /* AppDelegate.swift in Sources */,

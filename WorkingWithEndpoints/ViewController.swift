@@ -12,18 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NetworkManager.shared.getUser { users in
-//            switch users {
-//            case .success(let success):
-//                success.forEach { user in
-//                    print(user.name)
-//                }
-//            case .failure(let failure):
-//                print(failure.localizedDescription)
-//            }
-//        }
-        
-        NetworkManager.shared.getComments { comments in
+        getComments(postId: 2)
+    }
+    
+    private func getComments(postId: Int) {
+        NetworkManager.shared.getComments(postId: String(postId)) { comments in
             switch comments {
             case .success(let success):
                 success.forEach { comment in
@@ -33,6 +26,7 @@ class ViewController: UIViewController {
                 print(failure.localizedDescription)
             }
         }
+        
     }
 
 
